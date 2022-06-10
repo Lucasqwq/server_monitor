@@ -18,3 +18,22 @@ jobs:
       run: |
         python3 server.py > log.txt 2>&1 &
         pytest
+
+
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.6", "3.7", "3.8", "3.9", pypy-2.7, pypy-3.8]
+        exclude:
+          - os: macos-latest
+            python-version: "3.6"
+          - os: windows-latest
+            python-version: "3.6"
