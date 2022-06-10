@@ -1,4 +1,5 @@
 name: pytest_test
+on: push
 
 jobs:
   push-job:
