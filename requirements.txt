@@ -1,1 +1,4 @@
-Flask
+flask
+pytest
+requests
+Flask-Testing
